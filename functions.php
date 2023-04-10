@@ -182,3 +182,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Optimization
  */
 require get_template_directory() . '/inc/optimization.php';
+
+/**
+ * Gutenberg Blocks
+ */
+require get_template_directory() . '/inc/blocks.php';
