@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Front Page Template
  *
@@ -10,7 +11,11 @@
  * @package freelancerTheme
  */
 
- get_header('front'); ?>
+get_header( 'front' );
 
+while ( have_posts() ) :
+	the_post();
+	the_content();
+endwhile; // End of the loop.
 
- <?php get_footer(); ?>
+get_footer();
