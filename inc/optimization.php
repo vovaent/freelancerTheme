@@ -1,6 +1,12 @@
 <?php
+/**
+ * freelancerTheme Theme Optimization
+ *
+ * @package freelancerTheme
+ */
+
 // Disable self-pingbacks
-function stop_self_ping( &$links ) {
+function freelancerTheme_stop_self_ping( &$links ) {
     $home = get_option( 'home' );
     foreach ( $links as $l => $link )
         if ( 0 === strpos( $link, $home ) )
