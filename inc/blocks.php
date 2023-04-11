@@ -31,6 +31,7 @@ function freelancerTheme_register_blocks() {
 	if ( ! function_exists( 'acf_register_block' ) ) {
 		return;
 	}
+
 	acf_register_block(
 		array(
 			'name'            => 'masthead',
@@ -40,7 +41,20 @@ function freelancerTheme_register_blocks() {
 			'category'        => 'front-page',
 			'icon'            => 'admin-users',
 			'mode'            => 'preview',
-			'keywords'        => array( 'first screen' ),
+			'keywords'        => array( 'first screen', 'front page' ),
+		)
+	);
+
+	acf_register_block(
+		array(
+			'name'            => 'portfolio',
+			'title'           => __( 'Portfolio', 'freelancerTheme' ),
+			'render_template' => 'template-parts/blocks/portfolio/portfolio.php',
+			'enqueue_style'   => get_template_directory_uri() . '/template-parts/blocks/portfolio/portfolio.css',
+			'category'        => 'front-page',
+			'icon'            => 'admin-users',
+			'mode'            => 'preview',
+			'keywords'        => array( 'front page' ),
 		)
 	);
 }
