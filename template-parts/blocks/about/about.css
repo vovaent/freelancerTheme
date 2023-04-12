@@ -1,0 +1,7 @@
+.btn:visited {
+	color: var(--bs-btn-color);
+}
+
+.btn:hover {
+	color: var(--bs-btn-hover-color);
+}

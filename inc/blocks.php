@@ -57,5 +57,18 @@ function freelancerTheme_register_blocks() {
 			'keywords'        => array( 'front page' ),
 		)
 	);
+
+	acf_register_block(
+		array(
+			'name'            => 'about',
+			'title'           => __( 'About', 'freelancerTheme' ),
+			'render_template' => 'template-parts/blocks/about/about.php',
+			'enqueue_style'   => get_template_directory_uri() . '/template-parts/blocks/about/about.css',
+			'category'        => 'front-page',
+			'icon'            => 'admin-users',
+			'mode'            => 'preview',
+			'keywords'        => array( 'front page' ),
+		)
+	);
 }
 add_action( 'acf/init', 'freelancerTheme_register_blocks' );
