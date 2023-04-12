@@ -1,3 +1,11 @@
+.portfolio .portfolio-grid {
+	margin-bottom: -3rem !important;
+}
+
+/* .portfolio .portfolio-item-wrapper {
+	margin-bottom: 3rem !important;
+} */
+
 .portfolio .portfolio-item {
 	cursor: pointer;
 	position: relative;
