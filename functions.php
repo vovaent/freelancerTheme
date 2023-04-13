@@ -188,3 +188,8 @@ require get_template_directory() . '/inc/optimization.php';
  * Gutenberg Blocks
  */
 require get_template_directory() . '/inc/blocks.php';
+
+/**
+ * Contact Form 7
+ */
+require get_template_directory() . '/inc/cf7.php';
