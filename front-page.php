@@ -18,4 +18,4 @@ while ( have_posts() ) :
 	the_content();
 endwhile; // End of the loop.
 
-get_footer();
+get_footer( 'front' );
