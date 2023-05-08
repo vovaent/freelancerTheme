@@ -42,6 +42,14 @@ function freelancerTheme_register_blocks() {
 			'icon'            => 'admin-users',
 			'mode'            => 'preview',
 			'keywords'        => array( 'first screen', 'front page' ),
+			'example'         => array(
+				'attributes' => array(
+					'mode' => 'preview',
+					'data' => array(
+						'gutenberg_preview_image' => get_template_directory_uri() . '/template-parts/blocks/masthead/masthead.png',
+					),
+				),
+			),
 		)
 	);
 

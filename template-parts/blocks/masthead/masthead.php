@@ -1,4 +1,8 @@
 <?php
+if ( isset( $block['data']['gutenberg_preview_image'] ) && $is_preview ) {
+	echo '<img src="' . $block['data']['gutenberg_preview_image'] . '" style="max-width:100%; height:auto;">';
+}
+
 /**
  * Masthead Block Template.
  *
@@ -8,26 +12,28 @@
  * @param   (int|string) $post_id The post ID this block is saved to.
  */
 
-// Create id attribute allowing for custom "anchor" value.
-$id = 'masthead-' . $block['id'];
-if ( ! empty( $block['anchor'] ) ) {
-	$id = $block['anchor'];
-}
+if ( ! $is_preview ) :
 
-// Create class attribute allowing for custom "className" and "align" values.
-$className = 'masthead bg-primary text-white text-center';
-if ( ! empty( $block['className'] ) ) {
-	$className .= ' ' . $block['className'];
-}
-if ( ! empty( $block['align'] ) ) {
-	$className .= ' align' . $block['align'];
-}
+	// Create id attribute allowing for custom "anchor" value.
+	$id = 'masthead-' . $block['id'];
+	if ( ! empty( $block['anchor'] ) ) {
+		$id = $block['anchor'];
+	}
 
-// Load values and assing defaults.
-$avatar_image  = get_field( 'avatar_image' );
-$main_title    = get_field( 'main_title' );
-$main_subtitle = get_field( 'main_subtitle' );
-?>
+	// Create class attribute allowing for custom "className" and "align" values.
+	$className = 'masthead bg-primary text-white text-center';
+	if ( ! empty( $block['className'] ) ) {
+		$className .= ' ' . $block['className'];
+	}
+	if ( ! empty( $block['align'] ) ) {
+		$className .= ' align' . $block['align'];
+	}
+
+	// Load values and assing defaults.
+	$avatar_image  = get_field( 'avatar_image' );
+	$main_title    = get_field( 'main_title' );
+	$main_subtitle = get_field( 'main_subtitle' );
+	?>
 
 <!-- Masthead-->
 <header id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $className ); ?>">
@@ -55,3 +61,6 @@ $main_subtitle = get_field( 'main_subtitle' );
 		</p>
 	</div>
 </header>
+
+	<?php
+endif;
