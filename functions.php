@@ -153,6 +153,33 @@ function freelancertheme_scripts() {
 add_action( 'wp_enqueue_scripts', 'freelancertheme_scripts' );
 
 /**
+ * Theme options
+ */
+function freelancerTheme_acf_option_init() {
+	if ( function_exists( 'acf_add_options_sub_page' ) ) {
+
+		$parent = acf_add_options_page(
+			array(
+				'page_title' => __( 'Theme Settings' ),
+				'menu_title' => __( 'Theme Settings' ),
+				'menu_slug'  => 'theme-general-settings',
+				'capability' => 'edit_posts',
+				'redirect'   => false,
+			)
+		);
+
+		acf_add_options_sub_page(
+			array(
+				'page_title'  => 'Theme Footer Settings',
+				'menu_title'  => 'Footer',
+				'parent_slug' => 'theme-general-settings',
+			)
+		);
+	}
+}
+add_action( 'acf/init', 'freelancerTheme_acf_option_init' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
